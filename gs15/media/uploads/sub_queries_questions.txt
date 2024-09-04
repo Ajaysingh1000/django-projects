@@ -1,0 +1,105 @@
+
+CREATE TABLE customers (
+  customer_id SERIAL PRIMARY KEY,
+  first_name VARCHAR(50),
+  last_name VARCHAR(50),
+  city VARCHAR(50),
+  country VARCHAR(50),
+  age INT,
+  gender VARCHAR(10)
+);
+
+
+--- CUSTOMER TABLE INSERT STATEMENT ---
+INSERT INTO customers (first_name, last_name, city, country, age, gender)
+VALUES
+  ('John', 'Doe', 'New York', 'United States', 30, 'Male'),
+  ('Jane', 'Smith', 'London', 'United Kingdom', 25, 'Female'),
+  ('Michael', 'Johnson', 'Chicago', 'United States', 35, 'Male'),
+  ('Emily', 'Davis', 'Sydney', 'Australia', 28, 'Female'),
+  ('David', 'Wilson', 'Paris', 'France', 32, 'Male'),
+  ('Sarah', 'Jones', 'Berlin', 'Germany', 27, 'Female'),
+  ('Robert', 'Brown', 'Tokyo', 'Japan', 29, 'Male'),
+  ('Jennifer', 'Lee', 'Toronto', 'Canada', 31, 'Female'),
+  ('Matthew', 'Taylor', 'Rome', 'Italy', 33, 'Male'),
+  ('Amy', 'Miller', 'Delhi', 'India', 26, 'Female');
+
+
+
+--------------------------------------------------------------------------------------------------
+
+CREATE TABLE orders (
+  order_id SERIAL PRIMARY KEY,
+  customer_id INT,
+  order_date DATE,
+  total_amount DECIMAL(10, 2),
+  status VARCHAR(20)
+);
+
+
+--- ORDERS TABLE INSERT STATEMENT ---
+
+INSERT INTO orders (customer_id, order_date, total_amount, status)
+VALUES
+  (1, '2022-01-01', 1000.00, 'Pending'),
+  (2, '2022-02-01', 2000.00, 'Completed'),
+  (3, '2022-03-01', 1500.00, 'Completed'),
+  (4, '2022-04-01', 1200.00, 'Pending'),
+  (5, '2022-05-01', 1800.00, 'Completed'),
+  (6, '2022-06-01', 2200.00, 'Completed'),
+  (7, '2022-07-01', 1300.00, 'Pending'),
+  (8, '2022-08-01', 2500.00, 'Completed'),
+  (9, '2022-09-01', 1400.00, 'Pending'),
+  (10, '2022-10-01', 1700.00, 'Completed'),
+  (1, '2023-01-01', 1100.00, 'Completed'),
+  (2, '2023-02-01', 1900.00, 'Completed'),
+  (3, '2023-03-01', 1600.00, 'Pending'),
+  (4, '2023-04-01', 1300.00, 'Completed'),
+  (5, '2023-05-01', 2100.00, 'Completed'),
+  (6, '2023-06-01', 2300.00, 'Pending'),
+  (7, '2023-07-01', 1200.00, 'Completed'),
+  (8, '2023-08-01', 2700.00, 'Completed'),
+  (9, '2023-09-01', 1500.00, 'Pending'),
+  (10, '2023-10-01', 2000.00, 'Completed');
+
+
+Basic Level Questions:
+
+Retrieve the first name and last name of customers who are from the city 'New York'.
+Retrieve the order IDs of orders placed by customers from the country 'United States'.
+Retrieve the total amount of each order.
+Retrieve the first name and last name of customers who have placed orders.
+Retrieve the order IDs of orders with a total amount greater than 1000.
+Retrieve the first name and last name of customers who have not placed any orders.
+Retrieve the first name and last name of customers who have placed orders in the year 2022.
+Retrieve the order IDs of orders placed by customers whose last name starts with 'S'.
+Retrieve the total amount of orders placed by customers from the city 'London'.
+Retrieve the first name and last name of customers who have placed orders with a total amount greater than the average total amount of all orders.
+
+
+Intermediate Level Questions:
+Retrieve the first name and last name of customers who have placed orders with a total amount greater than the maximum total amount of orders placedby customers from the same city.
+
+Retrieve the order IDs of orders with a total amount greater than the average total amount of all orders.
+Retrieve the first name and last name of customers who have placed orders in the year 2021 or 2023.
+Retrieve the order IDs of orders with a total amount greater than the total amount of the highest order.
+Retrieve the first name and last name of customers who have placed orders with a total amount greater than the total amount of the order with the highest total amount.
+Retrieve the order IDs of orders placed by customers whose country is different from the country of the customer with the highest customer ID.
+Retrieve the first name and last name of customers who have placed orders with a total amount greater than the average total amount of orders placed by customers from the same country.
+Retrieve the order IDs of orders with a total amount greater than the sum of the total amounts of all orders placed by customers from the same city.
+Retrieve the first name and last name of customers who have placed orders with a total amount greater than the total amount of orders placed by customers from the same country.
+Retrieve the order IDs of orders placed by customers whose last name is the same as the last name of the customer with the lowest customer ID.
+Retrieve the first name and last name of customers who have placed at least two orders.
+Retrieve the order IDs of orders placed by customers whose total amount is greater than the total amount of all orders placed by customers from the same city.
+Retrieve the first name and last name of customers who have placed orders with a total amount greater than the total amount of all orders placed by customers from the same country in the year 2022.
+Retrieve the order IDs of orders with a total amount greater than the average total amount of orders placed by customers from the same city.
+Retrieve the first name and last name of customers who have placed orders with a total amount greater than the total amount of the average order.
+
+
+Advanced Level Questions:
+26. Retrieve the order IDs of orders placed by customers whose country has more than one customer.
+
+Retrieve the first name and last name of customers who have placed orders with a total amount greater than the average total amount of orders placed by customers from the same country in the year 2021 or 2023.
+Retrieve the order IDs of orders with a total amount greater than the maximum total amount of orders placed by customers from the same city in the year 2022.
+Retrieve the first name and last name of customers who have placed orders with a total amount greater than the sum of the total amounts of all orders placed by customers from the same country.
+Retrieve the order IDs of orders placed by customers whose total amount is greater than the total amount of all orders placed by customers from the same country in the year 2021 or 2023.
